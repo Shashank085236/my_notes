@@ -1,3 +1,8 @@
 # search for a class and find jar name in group of jars
 command:
 for i in *.jar; do unzip -v "$i" | grep -Hsi EmailGeneration.class && echo "$i"; done
+
+
+# if jar location is unknown
+command:
+for i in $(locate "*.jar"); do echo $i; unzip -v "$i" | grep -Hsi ClassName; done
