@@ -6,3 +6,10 @@ for i in *.jar; do unzip -v "$i" | grep -Hsi EmailGeneration.class && echo "$i";
 # if jar location is unknown
 command:
 for i in $(locate "*.jar"); do echo $i; unzip -v "$i" | grep -Hsi ClassName; done
+
+#file processing: multiple lines to one separated by a given dilimiter.
+ cat output.txt | tr '\n' ',' > output2.txt
+ 
+ 
+ 
+ 
